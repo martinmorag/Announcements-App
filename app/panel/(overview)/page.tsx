@@ -11,11 +11,11 @@ export default function Page() {
           alt="Picture of Logo"
           width={250}
           height={117.20}
-          className="h-117"
+          className="h-[185px] w-[auto]"
         />
-        <div>
-          <p className="text-lg italic pb-5">&quot;El aprendizaje es experiencia, todo lo demás es información.&quot;</p>
-          <p className="text-lg text-right">- Albert Einstein</p>
+        <div className='px-[1.5rem]'>
+          <p className="text-lg italic pb-5">&quot;News is what somebody somewhere wants to suppress; all the rest is advertising.&quot;</p>
+          <p className="text-lg text-right">- Lord Northcliffe</p>
         </div>
         <Link
           href="/"
