@@ -32,7 +32,7 @@ export const MiniAnuncios: React.FC<MiniAnunciosProps> = ({ anuncios, onDelete }
                     >
                     <TrashIcon className="h-[23px] w-[23px]"/>
                     </button>
-                    <Link href={`/panel/anuncios/editar/${anuncio._id}`} className="bg-gray-50 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-md">
+                    <Link href={`/dashboard/announcements/edit/${anuncio._id}`} className="bg-gray-50 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-md">
                         <PencilIcon className="h-[23px] w-[23px]" />
                     </Link>
                 </div>

@@ -27,7 +27,7 @@ export default function LoginForm() {
 
       // Assuming dispatch handles form submission and triggers authenticate internally
       if (!pending && !errorMessage) {
-        router.push('/panel/anuncios'); // Redirect upon successful authentication
+        router.push('/dashboard/announcements'); // Redirect upon successful authentication
       }
     } catch (error) {
       console.error('Form submission error:', error);
@@ -38,7 +38,7 @@ export default function LoginForm() {
     <form onSubmit={handleSubmit} className="mt-[30%]">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
         <h1 className="mb-3 text-2xl">
-          Por favor ingrese para continuar
+          Please log in to continue
         </h1>
         <div className="w-full">
           <div>
@@ -54,7 +54,7 @@ export default function LoginForm() {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="Ingrese su correo electrónico"
+                placeholder="Type in your email"
                 required
               />
               <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -65,7 +65,7 @@ export default function LoginForm() {
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
               htmlFor="password"
             >
-              Contraseña
+              Password
             </label>
             <div className="relative">
               <input
@@ -73,7 +73,7 @@ export default function LoginForm() {
                 id="password"
                 type="password"
                 name="password"
-                placeholder="Ingrese su contraseña"
+                placeholder="Type in your password"
                 required
                 minLength={6}
               />
@@ -104,7 +104,7 @@ function LoginButton() {
  
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>
-      <span className='px-2'>Ingresar</span> <ArrowRightIcon className="h-5 w-5" />
+      <span className='px-2'>Log in</span> <ArrowRightIcon className="h-5 w-5" />
     </Button>
   );
 }

@@ -74,7 +74,7 @@ const EditAnuncioPage: React.FC = () => {
 
       if (response.ok) {
         console.log("Anuncio updated successfully");
-        router.push("/panel/anuncios");
+        router.push("/dashboard/announcements");
       } else {
         console.error("Error updating anuncio");
       }
@@ -104,9 +104,9 @@ const EditAnuncioPage: React.FC = () => {
 
   return (
     <main>
-      <h1 className="text-xl text-center mt-[13vh] mb-5">Editar anuncio</h1>
-      <Link href="/panel/anuncios" className="flex absolute top-5 left-5 bg-primary text-white p-2 pr-3 pl-3 rounded-md hover:text-primary hover:bg-white transition ease-in-out duration-300">
-        Regresar
+      <h1 className="text-xl text-center mt-[13vh] mb-5">Edit Announcement</h1>
+      <Link href="/dashboard/announcements" className="flex absolute top-5 left-5 bg-primary text-white p-2 pr-3 pl-3 rounded-md hover:text-primary hover:bg-white transition ease-in-out duration-300">
+        Go back
         <ArrowUturnLeftIcon className="w-[22px] h-[22px] ml-2" />
       </Link>
       <div className="flex justify-around">
@@ -115,13 +115,13 @@ const EditAnuncioPage: React.FC = () => {
             {/* Nombre de anuncio */}
             <div className="flex flex-col pt-1 pb-1">
               <label htmlFor="nombre" className="text-white flex mb-1 mt-3">
-                Nombre <PencilIcon className="w-[20px] h-[20px] ml-2" />
+                Name <PencilIcon className="w-[20px] h-[20px] ml-2" />
               </label>
               <input
                 id="nombre"
                 name="nombre"
                 type="text"
-                placeholder="Ingresar nombre de anuncio"
+                placeholder="Type in announcement name"
                 required
                 className="rounded-sm"
                 value={formData.nombre}
@@ -131,12 +131,12 @@ const EditAnuncioPage: React.FC = () => {
             {/* Descripción de anuncio */}
             <div className="flex flex-col pt-1 pb-1">
               <label htmlFor="descripcion" className="text-white flex mb-1 mt-3">
-                Descripción <DocumentTextIcon className="w-[20px] h-[20px] ml-2" />
+                Description <DocumentTextIcon className="w-[20px] h-[20px] ml-2" />
               </label>
               <textarea
                 id="descripcion"
                 name="descripcion"
-                placeholder="Ingresar descripción de anuncio"
+                placeholder="Type in announcement description"
                 required
                 className="rounded-sm"
                 value={formData.descripcion}
@@ -146,12 +146,12 @@ const EditAnuncioPage: React.FC = () => {
             {/* Imágen de anuncio */}
             <div className="flex flex-col pt-1 pb-1">
               <label htmlFor="imagenes" className="text-white flex mb-1 mt-3">
-                Imágen <PhotoIcon className="w-[20px] h-[20px] ml-2" />
+                Image <PhotoIcon className="w-[20px] h-[20px] ml-2" />
               </label>
               <input
                 id="imagen"
                 name="imagen"
-                placeholder="Seleccionar imagen de anuncio"
+                placeholder="Select an image"
                 type="file"
                 className="rounded-sm"
                 onChange={handleImageChange}
@@ -166,8 +166,8 @@ const EditAnuncioPage: React.FC = () => {
                 id="submit"
                 name="submit"
                 type="submit"
-                className="flex justify-center bg-white w-[200px] h-[40px] rounded-md active:bg-primary active:text-white active:border-white"
-                value={isLoading ? "Actualizando..." : "Actualizar anuncio"}
+                className="flex justify-center bg-white w-[220px] h-[40px] rounded-md active:bg-primary active:text-white active:border-white"
+                value={isLoading ? "Updating..." : "Update Announcement"}
                 disabled={isLoading}
               />
             </div>

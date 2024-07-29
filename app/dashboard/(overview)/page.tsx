@@ -22,16 +22,16 @@ export default function Page() {
           className="flex border border-primary rounded px-7 py-2 transition duration-300 ease-in-out hover:bg-primary hover:text-white hover:border-white"
         >
           <NewspaperIcon className="w-5 md:w-6"/> 
-          <span className="px-3">¿Te gustaría ver nuestras últimas noticias?</span>
+          <span className="px-3">Would you like to see our latest announcements?</span>
         </Link>
        </div>
        <div className="flex flex-1 items-center justify-center bg-primary">
         <Link
-          href="/ingreso"
+          href="/login"
           className="flex border border-white rounded px-7 py-2 text-white transition duration-300 ease-in-out hover:bg-white hover:text-primary hover:border-primary"
         >
           <ArrowLeftEndOnRectangleIcon className="w-5 md:w-6"/> 
-          <span className="px-3">Ingresar</span> 
+          <span className="px-3">Log in</span> 
         </Link>
        </div>
     </main>

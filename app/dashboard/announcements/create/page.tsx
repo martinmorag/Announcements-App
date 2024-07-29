@@ -76,7 +76,7 @@ export default function Page() {
                     descripcion: "",
                     imagen: null,
                 });
-                router.push("/panel/anuncios")
+                router.push("/dashboard/announcements")
             } else {
                 console.error("Error creating item");
             }
@@ -106,8 +106,8 @@ export default function Page() {
     
     return (
       <main>
-        <h1 className="text-xl text-center mt-[13vh] mb-5">Crear un nuevo anuncio</h1>
-        <Link href="/panel/anuncios" className="flex absolute top-5 left-5 bg-primary text-white p-2 pr-3 pl-3 rounded-md hover:text-primary hover:bg-white transition ease-in-out duration-300">
+        <h1 className="text-xl text-center mt-[13vh] mb-5">Create new announcement</h1>
+        <Link href="/dasboard/announcements" className="flex absolute top-5 left-5 bg-primary text-white p-2 pr-3 pl-3 rounded-md hover:text-primary hover:bg-white transition ease-in-out duration-300">
             Regresar
             <ArrowUturnLeftIcon className="w-[22px] h-[22px] ml-2" />
         </Link>
@@ -117,13 +117,13 @@ export default function Page() {
                     {/* Nombre de anuncio */}
                     <div className="flex flex-col pt-1 pb-1">
                         <label htmlFor="nombre" className="text-white flex mb-1 mt-3">
-                            Nombre <PencilIcon className="w-[20px] h-[20px] ml-2" />
+                            Name <PencilIcon className="w-[20px] h-[20px] ml-2" />
                         </label>
                         <input
                             id="nombre"
                             name="nombre" 
                             type="text"
-                            placeholder="Ingresar nombre de anuncio" 
+                            placeholder="Type in announcement name" 
                             required
                             className="rounded-sm"
                             value={formData.nombre}
@@ -133,12 +133,12 @@ export default function Page() {
                     {/* Descripción de anuncio */}
                     <div className="flex flex-col pt-1 pb-1">
                         <label htmlFor="descripcion" className="text-white flex mb-1 mt-3">
-                            Descripción <DocumentTextIcon className="w-[20px] h-[20px] ml-2" />
+                            Description <DocumentTextIcon className="w-[20px] h-[20px] ml-2" />
                         </label>
                         <textarea
                             id="descripcion"
                             name="descripcion" 
-                            placeholder="Ingresar descripción de anuncio" 
+                            placeholder="Type in announcement name" 
                             required
                             className="rounded-sm"
                             value={formData.descripcion}
@@ -148,12 +148,12 @@ export default function Page() {
                     {/* Imágen de anuncio */}
                     <div className="flex flex-col pt-1 pb-1">
                         <label htmlFor="imagenes" className="text-white flex mb-1 mt-3">
-                            Imágen <PhotoIcon className="w-[20px] h-[20px] ml-2" />
+                            Image <PhotoIcon className="w-[20px] h-[20px] ml-2" />
                         </label>
                         <input
                             id="imagen"
                             name="imagen" 
-                            placeholder="Seleccionar de anuncio"
+                            placeholder="Select an image"
                             type="file" 
                             required
                             className="rounded-sm"
@@ -166,8 +166,8 @@ export default function Page() {
                         id="submit"
                         name="submit" 
                         type="submit"
-                        className="flex justify-center bg-white w-[150px] h-[40px] rounded-md active:bg-primary active:text-white active:border-white"
-                        value={isLoading ? "Subiendo..." : "Subir anuncio"}
+                        className="flex justify-center bg-white w-[210px] h-[40px] rounded-md active:bg-primary active:text-white active:border-white"
+                        value={isLoading ? "Uploading..." : "Upload announcement"}
                         disabled={isLoading}
                         />
                     </div>
