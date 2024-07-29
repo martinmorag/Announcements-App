@@ -5,11 +5,6 @@ import { useState, ChangeEvent } from "react";
 import { FormData } from "@/app/lib/definitions";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "Create | Dashboard",
-};
 
 // function onFileChange(event: any) {
 //     let file = event.target.files[0];

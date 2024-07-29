@@ -5,11 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import { DocumentTextIcon, PencilIcon, PhotoIcon, ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Anuncio } from "@/app/lib/definitions";
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: "Edit | Dashboard",
-};
 
 const EditAnuncioPage: React.FC = () => {
   const [formData, setFormData] = useState<Anuncio>({
