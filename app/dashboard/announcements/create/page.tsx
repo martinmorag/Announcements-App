@@ -108,7 +108,7 @@ export default function Page() {
       <main>
         <h1 className="text-xl text-center mt-[13vh] mb-5">Create new announcement</h1>
         <Link href="/dasboard/announcements" className="flex absolute top-5 left-5 bg-primary text-white p-2 pr-3 pl-3 rounded-md hover:text-primary hover:bg-white transition ease-in-out duration-300">
-            Regresar
+            Go back
             <ArrowUturnLeftIcon className="w-[22px] h-[22px] ml-2" />
         </Link>
         <div className="flex justify-around">
