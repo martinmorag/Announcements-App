@@ -3,6 +3,11 @@ import Link from "next/link";
 import { signOut } from '@/auth';
 import Actuales from '@/app/ui/actuales';
 import { Anuncio } from "@/app/lib/definitions";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 async function fetchAnuncios(): Promise<Anuncio[]> {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`);

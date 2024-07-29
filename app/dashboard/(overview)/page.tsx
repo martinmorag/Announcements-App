@@ -1,6 +1,11 @@
 import { ArrowLeftEndOnRectangleIcon, NewspaperIcon } from '@heroicons/react/24/solid';
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default function Page() {
   return (

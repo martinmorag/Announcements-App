@@ -79,7 +79,7 @@ const Page: React.FC = () => {
   }, [isLoading, anuncios]);
 
   if (isLoading) {
-    return <p>Cargando...</p>;
+    return <p>Loading...</p>;
   }
 
   return (

@@ -3,8 +3,8 @@ import { montserrat } from "./ui/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Noticias",
-  description: "Acá van a encontrar noticias sobre el Centro de Formación Profesional Victor Navajas Artaza",
+  title: "Announcements",
+  description: "Here you will find announcements that are able to be published and edited according to the client's needs.",
 };
 
 export default function RootLayout({
