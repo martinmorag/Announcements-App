@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/app/styles.css"
 
 const fetchAnuncios = async (): Promise<Anuncio[]> => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/approved`);
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }
