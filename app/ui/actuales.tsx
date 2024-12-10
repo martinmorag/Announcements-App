@@ -4,7 +4,15 @@ import { MiniAnuncios } from '@/app/ui/mini-anuncio'; // Adjust import as necess
 import { Anuncio } from '@/app/lib/definitions';
 
 async function fetchAnuncios(): Promise<Anuncio[]> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/approved`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  return response.json();
+}
+
+async function fetchCount(): Promise<Anuncio[]> {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items/count`);
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }
@@ -13,6 +21,7 @@ async function fetchAnuncios(): Promise<Anuncio[]> {
 
 const Actuales: React.FC = () => {
   const [anuncios, setAnuncios] = useState<Anuncio[]>([]);
+  const [anunciosNumber, setAnunciosNumber] = useState<number | null>(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,9 +35,22 @@ const Actuales: React.FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    async function fetchingCount() {
+      try {
+        const fetchedAnuncios = await fetchCount();
+        // @ts-ignore
+        setAnunciosNumber(fetchedAnuncios.count);
+      } catch (error) {
+        console.error('Failed to fetch anuncios:', error);
+      }
+    }
+    fetchingCount();
+  }, []);
+
   const handleDelete = async (id: string) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/approved/${id}`, {
         method: 'DELETE',
       });
 
@@ -46,7 +68,7 @@ const Actuales: React.FC = () => {
 
   return (
     <>
-      <MiniAnuncios anuncios={anuncios} onDelete={handleDelete} />
+      <MiniAnuncios anuncios={anuncios} onDelete={handleDelete} anunciosNumber={anunciosNumber}/>
     </>
   );
 };

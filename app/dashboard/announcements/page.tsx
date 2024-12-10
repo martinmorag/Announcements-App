@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 async function fetchAnuncios(): Promise<Anuncio[]> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/approved`);
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }
@@ -21,33 +21,36 @@ export default async function Page() {
     const anuncios = await fetchAnuncios()
 
     return (
-      <main>
-        <div className="flex p-4 mt-10 justify-center">
-          <form
-            className="relative group"
-            action={async () => {
-              'use server';
-              await signOut();
-            }}
-          >
-            <button className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
-              <div className="absolute left-[-80px] hidden group-hover:block text-gray-700 bg-gray-100 px-2 py-1 rounded-md text-md">
-                Log out
-              </div>
-              <PowerIcon className="w-6" />
-            </button>
-          </form>
-          <Link href="/dashboard/announcements/create" className="flex w-[30vw] h-[48px] ml-2 justify-center items-center bg-primary text-white rounded-md hover:bg-white hover:text-primary transition duration-300 ease-in-out">
-            <span className="text-large pr-3">Create new announcement</span>
-            <NewspaperIcon className="w-[24px] h-[24px]"/>
-          </Link>
-        </div>
-        <section>
-          <h1 className="text-center text-lg mt-10 mb-8">Current announcements</h1>
-          <div className="flex justify-around">
-            <Actuales />
-          </div>
-        </section>
-      </main>
+        <main>
+            <div className="flex p-4 mt-10 justify-center">
+                <form
+                    className="relative group"
+                    action={async () => {
+                        'use server';
+                        await signOut();
+                    }}
+                >
+                    <button
+                        className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
+                        <div
+                            className="absolute left-[-80px] hidden group-hover:block text-gray-700 bg-gray-100 px-2 py-1 rounded-md text-md">
+                            Log out
+                        </div>
+                        <PowerIcon className="w-6"/>
+                    </button>
+                </form>
+                <Link href="/dashboard/announcements/create"
+                      className="flex w-[30vw] h-[48px] ml-2 justify-center items-center bg-primary text-white rounded-md hover:bg-white hover:text-primary transition duration-300 ease-in-out">
+                    <span className="text-large pr-3">Create new announcement</span>
+                    <NewspaperIcon className="w-[24px] h-[24px]"/>
+                </Link>
+            </div>
+            <section>
+                <h1 className="text-center text-lg mt-10 mb-8">Current announcements</h1>
+                <div className="flex justify-around">
+                    <Actuales />
+                </div>
+            </section>
+        </main>
     );
-  }
+}

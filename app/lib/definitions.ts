@@ -30,5 +30,6 @@ export interface HomePageProps {
 
 export interface MiniAnunciosProps {
     anuncios: Anuncio[];
+    anunciosNumber: number | null;
     onDelete: (id: string) => void; // Function to handle delete action
 }
