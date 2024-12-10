@@ -9,17 +9,7 @@ export const metadata: Metadata = {
   title: "Dashboard",
 };
 
-async function fetchAnuncios(): Promise<Anuncio[]> {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/approved`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  return response.json();
-}
-
 export default async function Page() {
-    const anuncios = await fetchAnuncios()
-
     return (
         <main>
             <div className="flex p-4 mt-10 justify-center">
