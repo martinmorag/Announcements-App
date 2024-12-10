@@ -43,7 +43,7 @@ export const MiniAnuncios: React.FC<MiniAnunciosProps> = ({ anuncios, onDelete, 
                 ))}
             </div>
             {anunciosNumber !== null && anunciosNumber > 0 && (
-                <><br/><p className="text-black my-[1.5rem] mb-[2.5rem] text-center">Actuales anuncios en revisión: {anunciosNumber}</p></>
+                <><br/><p className="text-black my-[1.5rem] mb-[2.5rem] text-center">Current announcements on revision: {anunciosNumber}</p></>
             )}
         </div>
     )
